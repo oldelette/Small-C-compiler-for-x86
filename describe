@@ -1,0 +1,12 @@
+Execute:
+make
+java -cp antlr-4.7-complete.jar:. myCompiler_test input.c > xx.s
+./arm-elf-gcc -L../arm-elf/lib -lc output.s -o executable
+./arm-elf-run executable
+
+Clean up:
+make clean
+
+example1.c -> aa.s
+example2.c -> bb.s
+example3.c -> cc.s
